@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+
+{% load static %}
+
+{% block content %}
+<section class="news">
+    <div class="news-content-pedido">
+        <h3>Descripción del pedido</h3>
+        <img src="{{pedido.imagen.url}}" alt="img del pedido">
+        <div class="news-info-pedido">
+            <h2>{{ pedido.fecha }}</h2>
+            <br>
+            <h4>Libras: {{ pedido.tamaño }}</h4>
+            <h4>{{ pedido.tipo }}</h4>
+            <p>{{ pedido.moldes }}</p>
+            <br>
+            <p>{{ pedido.decoracion }}</p>
+            <br>
+            <h2>{{ pedido.cliente }}</h2>
+            <h4>{{ pedido.telefono }}</h4>
+            <br>
+            <h5>{{ pedido.vendedor }}</h5>
+            <h5>{{ pedido.precio }}</h5>
+            <h5>{{ pedido.registro }}</h5>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block contact %}{% endblock %}
+

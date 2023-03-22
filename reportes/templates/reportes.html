@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block head_base %}
+<!-- Librerias datatatable -->
+<!-- <link rel="stylesheet" href="{% static 'DataTables/datatables.css' %}"/> -->
+<script type="text/javascript" src="{% static 'lib/DataTables/datatables.js' %}"></script>
+<!-- Librerias daterangepicker -->
+<script type="text/javascript" src="{% static 'lib/daterangepicker-master/moment.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'lib/daterangepicker-master/daterangepicker.js'%}"></script>
+<link rel="stylesheet" href="{% static 'lib/daterangepicker-master/daterangepicker.css'%}"/>
+<script type="text/javascript" src="{% static 'sale/report.js'%}"></script>
+
+{% endblock %}
+
+
+
+{% block content %}
+<section class="news">
+    <div class="news-content d-flex flex-column">
+        <h3>Reporte de ventas </h3>
+        <div class="card card-primary">
+            <div class="card card-header bg-danger">
+                <i class="bi bi-graph-up-arrow"></i>
+            </div>
+            <div class="card card-body">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="form-group"></div>
+                        <label>Rango de fechas: </label>
+
+                        {{ form.date_ranger }}
+
+                    </div>
+                </div>
+                <hr>
+                <table class="table table-bordered" id="report">
+                    <thead>
+                        <tr>
+                            <th scope="col" style="width: 10%;">Numero</th>
+                            <th scope="col" style="width: 25%;">Fecha</th>
+                            <th scope="col" style="width: 10%;">Tamaño</th>
+                            <th scope="col" style="width: 15%;">Tipo(Libras)</th>
+                            <th scope="col" style="width: 25%;">Cliente</th>
+                            <th scope="col" style="width: 15%;">Valor</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                       
+                    </tbody>
+                </table>
+            </div>
+            <div class="card card-footer">
+               <div class="col-2">
+                <a href="{{list.url}}" class="btn btn-info btn-sm">
+                    <i class="bi bi-arrow-clockwise"> Actualizar </i>
+                </a>
+
+               </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block contact %}{% endblock %}

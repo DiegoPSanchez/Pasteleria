@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+
+{% block content %}
+<!-- Seccion de pedidos -->
+<main class="blogs-main">
+    <section class="news">
+        <div class="news-content">
+            <h3>Pedidos</h3>
+            <img src="{{fpedido.imagen.url}}" alt="img del pedido">
+            <div class="news-info">
+                <h2>{{ fpedido.fecha }}</h2>
+                <h4>{{ fpedido.cliente }}</h4>
+                <p>{{ fpedido.decoracion}}</p>
+                <a class="blogs-btn" href="{% url 'pedido' fpedido.id %}">Leer más</a>
+            </div>
+        </div>
+    </section>
+    <section class="posts">
+        <h3>Últimos Pedidos</h3>
+        {% for pedido in pedidos %}
+        <div class="posts-blog">
+            <img src="{{pedido.imagen.url}}" alt="imagen">
+            <h4>{{pedido.fecha}}</h4>
+            <h5>{{pedido.cliente}}</h5>
+            <p class="pedido-descripcion">{{pedido.decoracion}}</p>
+            <a class="blogs-btn" href="{% url 'pedido' pedido.id %}">Leer más</a>
+            <a class="blogs-btn" href="{% url 'editPedido' pedido.id %}">Editar</a>
+        </div>
+        {% endfor %}
+    </section>
+</main>
+{% endblock %}
+{% block contact %}{% endblock %}
+

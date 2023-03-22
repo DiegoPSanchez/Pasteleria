@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<!-- Seccion de pedidos -->
+{{ error }}
+<main class="posts col-md-6 offset-md-3">
+    <section class="news m-10">
+       <div class="m-5 mt-2">
+        <form action="/proceso/add/" method="POST" enctype="multipart/form-data">
+            <h3 class="text-center">Ingrese un nuevo pedido</h3>
+            {% csrf_token %}
+            {{form.as_p}}
+            <button class="btn btn-danger">
+                Guardar
+            </button>
+            <br>
+        </form>
+       </div>
+    </section>
+
+</main>
+{% endblock %}
+
+

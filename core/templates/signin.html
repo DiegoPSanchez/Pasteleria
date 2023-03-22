@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    {{ error }}
+    <main class="posts col-md-6 offset-md-3">
+        <section class="news m-10">
+            <div class="m-5 mt-2">
+                <form action="" method="POST">
+                    <h3 class="text-center">Iniciar sesión</h3>
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="username">Username:</label>
+                        <input 
+                        type="text"
+                        name="username"
+                        id="username"
+                        autocomplete="username"
+                        class="form-control"
+                        >
+                        <label for="password">Password:</label>
+                        <input 
+                        type="password"
+                        name="password"
+                        id="password"
+                        class="form-control"
+                        >
+                    </div>
+                    <button class="btn btn-danger">
+                        Ingresar
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+ 
+    <br>
+ 
+{% endblock %}
